@@ -13,8 +13,10 @@ static inline void PrintIntegerLabel(const char *label, mpz_t *n) {
 }
 
 
-int main()
+int main(int argc, char *argv[])
 {
+    if (argc == 1) { return EXIT_SUCCESS; }
+
     mpz_t a;
     mpz_t b;
     mpz_t o;
@@ -25,20 +27,7 @@ int main()
     mpz_init(o);
     mpz_init(s);
 
-    //mpz_set_str(a, "10000", 10);
-    //mpz_set_str(a, "5432000", 10);
-    //mpz_set_str(a, "858443", 10);
-    //mpz_set_str(a, "1858443", 10);
-    //mpz_set_str(a, "41858443", 10);
-    //mpz_set_str(a, "341858443", 10);
-    //mpz_set_str(a, "2341858443", 10);
-    //mpz_set_str(a, "82341858443", 10);
-    //mpz_set_str(a, "782341858443", 10);
-    //mpz_set_str(a, "9782341858443", 10);
-    //mpz_set_str(a, "49782341858443", 10);
-    //mpz_set_str(a, "549782341858443", 10);
-    mpz_set_str(a, "8549782341858443", 10);
-    //mpz_set_str(a, "1000000000000000000000", 10);
+    mpz_set_str(a, argv[1], 10);
     mpz_set_str(b, "2", 10);
     mpz_set_str(o, "1", 10);
 
