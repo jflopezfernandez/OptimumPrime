@@ -34,21 +34,15 @@ int main(int argc, char *argv[])
     /** Only check up to the square root of the number. */
     mpz_root(s, a, 2);
 
-    while (mpz_cmp(a, o)) {
-        if (!mpz_cmp(s,b)) {
-            break;
-        }
-
-        if (mpz_divisible_p(a, b)) {
-            do {
-                mpz_tdiv_q(a, a, b);
+    do {
+        while (mpz_divisible_p(a, b)) {
+            mpz_tdiv_q(a, a, b);
             
-                PrintInteger(&o, &b);
-            } while (mpz_divisible_p(a, b));
+            PrintInteger(&o, &b);
         }
 
         mpz_add(b, b, o);
-    }
+    } while (!mpz_cmp(s, b));
 
     PrintInteger(&o, &a);
     
