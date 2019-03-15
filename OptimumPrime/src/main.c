@@ -31,13 +31,8 @@ int main(int argc, char *argv[])
     mpz_set_str(b, "2", 10);
     mpz_set_str(o, "1", 10);
 
-    /** Only check up to the square root of the prime. */
+    /** Only check up to the square root of the number. */
     mpz_root(s, a, 2);
-
-    PrintIntegerLabel("a", &a);
-    PrintIntegerLabel("s", &s);
-
-    printf("\n");
 
     while (mpz_cmp(a, o)) {
         if (!mpz_cmp(s,b)) {
@@ -56,8 +51,8 @@ int main(int argc, char *argv[])
     }
 
     PrintInteger(&o, &a);
-
-    printf("\n\nDone. \n");
+    
+    printf("\n");
 
     return EXIT_SUCCESS;
 }

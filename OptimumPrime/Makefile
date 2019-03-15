@@ -13,7 +13,7 @@ vpath %.h include
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra -pedantic -O3 -mtune=intel -march=skylake -mavx2
 
-PROGRAM = prime
+PROGRAM = factor
 
 all: $(PROGRAM)
 
