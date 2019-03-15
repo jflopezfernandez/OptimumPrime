@@ -1,4 +1,6 @@
 
+// 53,663,276,193,683,619,382,169,858,284,349,305,861
+
 #include "OptimumPrime.h"
 
 static inline void PrintInteger(mpz_t *one, mpz_t *n) {
@@ -50,4 +52,3 @@ int main(int argc, char *argv[])
 
     return EXIT_SUCCESS;
 }
-
