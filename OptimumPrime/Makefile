@@ -10,8 +10,8 @@ vpath %.h include
 # Do not hard set these flags on release. Users
 # expect to be able to customize program compilation,
 # which these explicit flags prevent.
-CC = gcc
-CFLAGS = -std=c11 -Wall -Wextra -pedantic -O3 -mtune=intel -march=skylake -mavx2
+# CC = gcc
+# CFLAGS = -std=c11 -Wall -Wextra -pedantic -O3 -mtune=intel -march=skylake -mavx2
 
 PROGRAM = factor
 
