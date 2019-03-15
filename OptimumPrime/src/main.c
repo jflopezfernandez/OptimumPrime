@@ -16,7 +16,7 @@ static inline void PrintIntegerLabel(const char *label, mpz_t *n) {
 int main(int argc, char *argv[])
 {
     if (argc == 1) { return EXIT_SUCCESS; }
-
+    
     mpz_t a;
     mpz_t b;
     mpz_t o;
@@ -36,13 +36,13 @@ int main(int argc, char *argv[])
 
     do {
         while (mpz_divisible_p(a, b)) {
-            mpz_tdiv_q(a, a, b);
+            mpz_fdiv_q(a, a, b);
             
             PrintInteger(&o, &b);
         }
 
         mpz_add(b, b, o);
-    } while (!mpz_cmp(s, b));
+    } while (mpz_cmp(s, b) != 0);
 
     PrintInteger(&o, &a);
     
@@ -50,3 +50,4 @@ int main(int argc, char *argv[])
 
     return EXIT_SUCCESS;
 }
+
